@@ -1,0 +1,23 @@
+Description,Deductible Current ,Out of Pocket Current ,Deductible Max ,Out of Pocket Max,Cost for Service ,Cost Value ,Cost Type ,Deductible Applies?,Excluded Service?,Other Covered Service?,Unknown Medical Event ,Expected Value,family_deductible_current,family_out_of_pocket_current,family_deductible_max,family_out_of_pocket_max
+When the users deductible is under the deductible current and the cost of the service still leaves them below their deductible max ,0,0,2500,5000,1250,0.2,coinsurance ,1,0,0,0,1250,0,0,5000,10000
+"When the user is below their deductible max but the cost of the service puts them over their deductible, but below their oopm",2000,2000,2500,5000,2000,0.2,coinsurance ,1,0,0,0,400,2000,2000,5000,10000
+When the user is below their deductible but the cost of the services put them over their oopm ,2000,2000,2500,5000,20000,0.2,coinsurance ,1,0,0,0,3000,2000,2000,5000,10000
+When the deductible has been met but the costs to the user are still less than the oopm,2500,2500,2500,5000,10000,0.2,coinsurance ,1,0,0,0,2000,2500,2500,5000,10000
+When the deductible has been met and the costs to the user are over the oopm,2500,2500,2500,5000,20000,0.2,coinsurance ,1,0,0,0,2500,2500,2500,5000,10000
+When out of pocket max has been met ,5000,5000,2500,5000,2000,0.2,coinsurance ,1,0,0,0,0,5000,5000,5000,10000
+When the user has not met their deductible and the cost for the service is under their deductible ,0,0,2500,5000,2000,25,copay,1,0,0,0,2000,0,0,5000,10000
+"When the user has not met their deductible, but the cost for the service puts them over their deductible max but still below their oopm ",0,0,2500,5000,3000,25,copay,1,0,0,0,25,0,0,5000,10000
+When the user current deductible is very close to their deductible max and the cost exceeds the deductible max only by a little and the amount left over to pay for the whole service is less than the copy ,2400,2400,2500,5000,115,25,copay,1,0,0,0,25,2400,2400,5000,10000
+when the user is under their deductible but the cost for the service puts them over their oopm (unlikely scenario ),0,0,2500,5000,10000,6000,copay ,1,0,0,0,5000,0,0,5000,10000
+When the user is over their oopm (copay),6000,6000,2500,5000,3000,6000,copay,1,0,0,0,0,6000,6000,5000,10000
+When user is over their deductible max but under their oopm and the cost to the user is less than the oopm,3000,3000,2500,5000,3000,50,copay,1,0,0,0,50,3000,3000,5000,10000
+When user is over their deductible max but under their oopm and the cost to the user for the service puts them over their oopm,4500,4500,2500,5000,3000,600,copay ,1,0,0,0,500,4500,4500,5000,10000
+When the deductible does not apply to that service (copay),0,0,2500,5000,500,50,copay,0,0,0,0,50,0,0,5000,10000
+When the deductible does not apply to that service (coinsurance),0,0,2500,5000,500,0.2,coinsurance ,0,0,0,0,100,0,0,5000,10000
+When deductible does not apply and user is exactly at their oopm,5000,5000,2500,5000,500,50,coinsurance ,0,0,0,0,0,5000,5000,5000,10000
+When the deductible does not apply to that service but the user is over their oopm,5100,5100,2500,5000,500,50,coinsurance ,0,0,0,0,0,5100,5100,5000,10000
+When deductible does not apply and user is over oopm,4900,4900,2500,5000,1000,50,coinsurance ,0,0,0,0,100,4900,4900,5000,10000
+When the service is free and user is over their deductible ,2600,2600,2500,5000,0,0.2,coinsurance ,0,0,0,0,0,2600,2600,5000,10000
+Free service cost type copay,2600,2600,2500,5000,0,0,copay,0,0,0,0,0,2600,2600,5000,10000
+other covered service (service at bottom of sbc),2600,2600,2500,5000,500,0,copay,0,0,1,0,,2600,2600,5000,10000
+Service is under excluded service ,2600,2600,2500,5000,500,0,copay ,0,1,0,0,500,2600,2600,5000,10000
